@@ -26,6 +26,7 @@ const Radio = ({
     showInlineError,
     transform,
     value,
+    labelProps,
     ...props
 }) => (
     <FormControl
@@ -36,7 +37,7 @@ const Radio = ({
         margin={margin}
         required={required}
     >
-        {label && <FormLabel component="legend" htmlFor={name}>{label}</FormLabel>}
+        {label && <FormLabel component="legend" htmlFor={name} {...labelProps}>{label}</FormLabel>}
         <RadioGroup
             id={id}
             name={name}
