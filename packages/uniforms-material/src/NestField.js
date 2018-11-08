@@ -22,6 +22,7 @@ const Nest = ({
     name,
     required,
     showInlineError
+    labelProps,
 }) => (
     <FormControl
         disabled={!!disabled}
@@ -30,7 +31,7 @@ const Nest = ({
         margin={margin}
         required={required}
     >
-        {label && <FormLabel component="legend">{label}</FormLabel>}
+        {label && <FormLabel component="legend" {...labelProps}>{label}</FormLabel>}
         {children ? (
             injectName(name, children)
         ) : (

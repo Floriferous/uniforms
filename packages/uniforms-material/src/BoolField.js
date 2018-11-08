@@ -27,6 +27,7 @@ const Bool = ({
     showInlineError,
     transform,
     value,
+    labelProps,
     ...props
 }) => {
     const SelectionControl = appearance === 'checkbox' ? Checkbox : Switch;
@@ -40,7 +41,7 @@ const Bool = ({
             margin={margin}
             required={required}
         >
-            {legend && <FormLabel component="legend" htmlFor={name}>{legend}</FormLabel>}
+            {legend && <FormLabel component="legend" htmlFor={name} {...labelProps}>{legend}</FormLabel>}
             <FormGroup>
                 <FormControlLabel
                     control={<SelectionControl
