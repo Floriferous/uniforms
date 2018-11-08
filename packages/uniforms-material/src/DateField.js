@@ -32,6 +32,7 @@ const Date = ({
     required,
     showInlineError,
     value,
+    labelProps,
     ...props
 }) => (
     <FormControl
@@ -41,7 +42,7 @@ const Date = ({
         margin={margin}
         required={required}
     >
-        {label && <FormLabel component="legend" htmlFor={name}>{label}</FormLabel>}
+        {label && <FormLabel component="legend" htmlFor={name} {...labelProps}>{label}</FormLabel>}
         <Input
             name={name}
             onChange={event => dateParse(event.target.valueAsNumber, onChange)}
